@@ -1,0 +1,11 @@
+Comparative Analysis of Inflammatory Markers
+==================================================
+
+           IL-6       TNF-alpha      
+           mean   std      mean   std
+Group                                
+Control    15.5  1.58      32.4  2.37
+Treatment   8.5  1.08      20.8  1.93
+
+IL-6   Welch t-test: t = 11.560, p = 0.00000
+TNF-a  Welch t-test: t = 12.007, p = 0.00000
