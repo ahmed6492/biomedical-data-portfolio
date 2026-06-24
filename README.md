@@ -1,8 +1,8 @@
 # Biomedical Data Portfolio
 
-Two reproducible mini-projects demonstrating biomedical data analysis in Python.
+Three reproducible mini-projects demonstrating biomedical data analysis and junior bioinformatics support work in Python.
 
-The projects are intentionally small and transparent: dataset, analysis script, statistical output, figures, and one-page report. They show how I move from biological question to reproducible analysis and clear scientific communication.
+The projects are intentionally small and transparent: dataset/source, analysis script, statistical output, figures, and one-page report. They show how I move from biological question to reproducible analysis and clear scientific communication.
 
 ## Project 1 - Comparative Analysis of Inflammatory Markers
 
@@ -61,6 +61,38 @@ The projects are intentionally small and transparent: dataset, analysis script, 
 | `project2-gene-expression/volcano.png` | Volcano plot |
 | `project2-gene-expression/Gene_Expression_Report.pdf` | Final report |
 
+## Project 3 - Public GEO Lung Cancer Expression Analysis
+
+**Question:** Which expression probes differ most strongly between lung tumor and non-tumor lung tissue samples in public GEO series GSE10072?
+
+**Dataset:** Official public NCBI GEO dataset GSE10072, using processed microarray expression values from 58 tumor and 49 non-tumor lung tissue samples.
+
+**Methods:**
+
+- Official GEO series matrix download and parsing
+- Sample metadata extraction and group labeling
+- GPL96 probe annotation parsing
+- Probe-level Tumor vs Non-tumor mean comparison
+- Welch t-test
+- Benjamini-Hochberg FDR correction
+- Heatmap and volcano plot
+- One-page public-data report
+
+**Key result:** The workflow identified 859 significant probes at q < 0.05 and |log2FC| >= 1. Top signals included lower endothelial/vascular markers in tumor tissue and strong SPP1 upregulation in tumor tissue. This project demonstrates public-data handling rather than only simulated data analysis.
+
+**Files:**
+
+| File | Purpose |
+|---|---|
+| `project3-public-geo-lung-cancer/fetch_data.py` | Downloads and parses official NCBI GEO source files |
+| `project3-public-geo-lung-cancer/analysis.py` | Runs probe-level differential-expression analysis |
+| `project3-public-geo-lung-cancer/make_report.py` | Builds the one-page PDF report |
+| `project3-public-geo-lung-cancer/data/processed/sample_metadata.csv` | Parsed GEO sample metadata |
+| `project3-public-geo-lung-cancer/outputs/differential_expression_gse10072.csv` | Full statistics output |
+| `project3-public-geo-lung-cancer/figures/gse10072_heatmap.png` | Heatmap |
+| `project3-public-geo-lung-cancer/figures/gse10072_volcano.png` | Volcano plot |
+| `project3-public-geo-lung-cancer/outputs/GSE10072_Public_GEO_Lung_Cancer_Report.pdf` | Final public-data report |
+
 ## Reproduce Locally
 
 Install dependencies:
@@ -85,11 +117,22 @@ python analysis.py
 python make_report.py
 ```
 
+Run Project 3:
+
+```bash
+cd project3-public-geo-lung-cancer
+pip install -r requirements.txt
+python fetch_data.py
+python analysis.py
+python make_report.py
+```
+
 ## Notes
 
-- The datasets are simulated for portfolio demonstration.
+- Projects 1 and 2 use simulated datasets for portfolio demonstration.
+- Project 3 uses official public NCBI GEO data and keeps raw GEO files out of the repository by default.
 - The purpose is to show workflow quality: clean data handling, appropriate basic statistics, figures, and reporting.
-- This is a gene-expression panel analysis, not a full production RNA-seq pipeline.
+- These are junior bioinformatics and biomedical data demonstrations, not a full production RNA-seq or clinical diagnostic pipeline.
 
 ## Author
 

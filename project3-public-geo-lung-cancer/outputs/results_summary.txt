@@ -1,0 +1,22 @@
+Public GEO lung cancer expression analysis - GSE10072
+================================================================
+
+Source: NCBI GEO GSE10072 series matrix
+Comparison: Tumor vs Non-tumor lung tissue
+Samples: {'Tumor': 58, 'Non-tumor': 49}
+Expression values log2-transformed by script: False
+Significance rule: q < 0.05 and absolute log2 fold change >= 1.0
+Significant probes: 859
+
+Top 10 probes by q-value:
+   probe_id gene_label  log2FC_tumor_vs_non_tumor      p_value      q_value
+209074_s_at    FAM107A                  -3.371799 6.641899e-44 1.480014e-39
+204396_s_at       GRK5                  -2.388072 2.009124e-41 2.238466e-37
+  204677_at       CDH5                  -2.619573 1.317136e-40 9.783245e-37
+  208982_at     PECAM1                  -1.813914 3.357325e-39 1.870282e-35
+  213103_at    STARD13                  -1.219820 5.221337e-39 2.326941e-35
+  208981_at     PECAM1                  -1.688902 7.219182e-39 2.681084e-35
+  210081_at       AGER                  -4.417470 4.769095e-38 1.518139e-34
+  202112_at        VWF                  -2.258474 1.464679e-37 3.972016e-34
+  219719_at     HIGD1B                  -1.363973 1.714932e-37 3.972016e-34
+209875_s_at       SPP1                   4.364415 1.782532e-37 3.972016e-34
